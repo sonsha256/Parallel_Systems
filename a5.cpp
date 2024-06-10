@@ -20,7 +20,8 @@ data cache_test(int array_size, int stride) {
     int *array = static_cast<int *>(malloc(array_size * sizeof(int)));
     auto temp = 0;
     // Start clock
-    timespec start{}, end{};
+    timespec start{};
+    timespec end{};
     clock_gettime(CLOCK_REALTIME, &start);
 
     for (volatile int times = 0; times <= iterations; ++times) {
